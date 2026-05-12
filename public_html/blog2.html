@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Exploring the life, contributions, and undying legacy of Lokmanya Bal Gangadhar Tilak — the father of Indian unrest and architect of nationalism.">
+  <title>Lokmanya Tilak: Architect of Indian Nationalism — Ayush Sabhasad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --surface: #16161f;
+      --surface2: #1e1e2e;
+      --border: rgba(255,255,255,0.07);
+      --text: #e2e2f0;
+      --text-muted: #7b7b9a;
+      --accent: #7c3aed;
+      --accent2: #06b6d4;
+      --gradient: linear-gradient(135deg, #7c3aed, #06b6d4);
+      --radius: 16px;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* Progress bar */
+    #progress-bar {
+      position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+      background: var(--gradient); z-index: 1000;
+      transition: width 0.1s linear;
+    }
+
+    /* Back nav */
+    .top-nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 6%; height: 60px;
+      background: rgba(10,10,15,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      z-index: 999;
+    }
+    .back-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--text-muted); text-decoration: none; font-size: 14px;
+      font-weight: 500; transition: color 0.2s;
+    }
+    .back-btn:hover { color: var(--accent2); }
+    .nav-logo {
+      font-size: 18px; font-weight: 800; text-decoration: none;
+      background: var(--gradient); -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .blog-meta-nav { font-size: 12px; color: var(--text-muted); }
+
+    /* Hero */
+    .hero {
+      position: relative; margin-top: 60px;
+      height: 380px; overflow: hidden;
+      display: flex; align-items: flex-end;
+      background: radial-gradient(ellipse at 60% 40%, rgba(124,58,237,0.25) 0%, transparent 60%),
+                  radial-gradient(ellipse at 20% 70%, rgba(6,182,212,0.15) 0%, transparent 50%),
+                  var(--bg);
+    }
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image: linear-gradient(var(--border) 1px, transparent 1px),
+                        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 60px 60px;
+      -webkit-mask-image: linear-gradient(to bottom, transparent, rgba(0,0,0,0.3) 30%, rgba(0,0,0,0.3) 70%, transparent);
+      mask-image: linear-gradient(to bottom, transparent, rgba(0,0,0,0.3) 30%, rgba(0,0,0,0.3) 70%, transparent);
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, var(--bg) 15%, transparent 60%);
+    }
+    .hero-content {
+      position: relative; z-index: 1;
+      max-width: 860px; margin: 0 auto; width: 100%;
+      padding: 0 5% 48px;
+    }
+    .blog-label {
+      display: inline-block; font-size: 11px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--accent2); margin-bottom: 16px;
+      background: rgba(6,182,212,0.1); border: 1px solid rgba(6,182,212,0.2);
+      padding: 4px 12px; border-radius: 6px;
+    }
+    .hero-title {
+      font-family: 'Lora', serif;
+      font-size: clamp(28px, 5vw, 48px); font-weight: 600;
+      line-height: 1.2; margin-bottom: 16px;
+      color: #fff;
+    }
+    .hero-byline {
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+      font-size: 13px; color: var(--text-muted);
+    }
+    .hero-byline span { display: flex; align-items: center; gap: 5px; }
+
+    /* Article body */
+    .article-wrapper {
+      max-width: 720px; margin: 0 auto; padding: 56px 5% 80px;
+    }
+
+    .article-wrapper h2 {
+      font-family: 'Lora', serif;
+      font-size: 26px; font-weight: 600;
+      margin: 48px 0 16px;
+      color: var(--text);
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-wrapper p {
+      font-size: 16px; color: var(--text-muted);
+      line-height: 1.85; margin-bottom: 20px;
+    }
+    .article-wrapper strong { color: var(--text); font-weight: 600; }
+
+    blockquote {
+      margin: 32px 0; padding: 20px 24px;
+      border-left: 3px solid var(--accent);
+      background: var(--surface);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-family: 'Lora', serif; font-style: italic;
+      color: var(--text); font-size: 18px; line-height: 1.65;
+    }
+
+    .key-facts {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px; margin: 32px 0;
+    }
+    .fact-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 20px; text-align: center;
+    }
+    .fact-card .fact-num {
+      font-size: 32px; font-weight: 800;
+      background: var(--gradient); -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; background-clip: text;
+      display: block; margin-bottom: 4px;
+    }
+    .fact-card .fact-label { font-size: 13px; color: var(--text-muted); }
+
+    .highlight-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 24px; margin: 32px 0;
+    }
+    .highlight-box h4 {
+      font-size: 13px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--accent2); margin-bottom: 12px;
+    }
+    .highlight-box ul { list-style: none; }
+    .highlight-box ul li {
+      font-size: 14px; color: var(--text-muted);
+      padding: 6px 0 6px 20px; position: relative; border-bottom: 1px solid var(--border);
+    }
+    .highlight-box ul li:last-child { border-bottom: none; }
+    .highlight-box ul li::before { content: '▸'; position: absolute; left: 0; color: var(--accent2); }
+
+    /* Footer */
+    .article-footer {
+      max-width: 720px; margin: 0 auto; padding: 0 5% 60px;
+      border-top: 1px solid var(--border); padding-top: 40px;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+    }
+    .article-footer p { font-size: 13px; color: var(--text-muted); }
+    .back-home {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 20px; border-radius: 10px;
+      background: var(--surface); border: 1px solid var(--border);
+      color: var(--text); font-size: 14px; font-weight: 500;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .back-home:hover { border-color: var(--accent2); color: var(--accent2); }
+  </style>
+</head>
+<body>
+  <div id="progress-bar"></div>
+
+  <nav class="top-nav">
+    <a href="index.html" class="back-btn">
+      <i class='bx bx-arrow-back'></i> Back to Portfolio
+    </a>
+    <a href="index.html" class="nav-logo">AS</a>
+    <span class="blog-meta-nav">History · 6 min read</span>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="blog-label">History</span>
+      <h1 class="hero-title">Lokmanya Tilak: The Architect of Indian Nationalism</h1>
+      <div class="hero-byline">
+        <span><i class='bx bx-user'></i> Ayush Sabhasad</span>
+        <span><i class='bx bx-calendar'></i> 2024</span>
+        <span><i class='bx bx-time-five'></i> 6 min read</span>
+      </div>
+    </div>
+  </div>
+
+  <article class="article-wrapper">
+
+    <p>
+      <strong>Lokmanya Bal Gangadhar Tilak</strong>, born on <strong>July 23, 1856</strong> in Ratnagiri, Maharashtra, was one of the most towering figures of the Indian independence movement. He earned the title <em>"Lokmanya"</em> — meaning "accepted by the people" — for his extraordinary ability to connect with ordinary Indians and transform their latent discontent into organized political action.
+    </p>
+
+    <div class="key-facts">
+      <div class="fact-card">
+        <span class="fact-num">1856</span>
+        <span class="fact-label">Born in Ratnagiri, Maharashtra</span>
+      </div>
+      <div class="fact-card">
+        <span class="fact-num">1916</span>
+        <span class="fact-label">Founded the Home Rule League</span>
+      </div>
+      <div class="fact-card">
+        <span class="fact-num">6</span>
+        <span class="fact-label">Years imprisoned in Mandalay</span>
+      </div>
+    </div>
+
+    <h2>Early Life and Education</h2>
+    <p>
+      Tilak was a brilliant scholar from a young age. He graduated with a degree in mathematics and went on to study law. After completing his education, he co-founded the <strong>Deccan Education Society</strong> and the <strong>New English School</strong> in Pune with Gopal Ganesh Agarkar — institutions that were instrumental in spreading modern education across Maharashtra.
+    </p>
+    <p>
+      As a journalist, Tilak used his newspapers — <strong>Kesari</strong> (Marathi) and <strong>Mahratta</strong> (English) — as powerful weapons against British colonialism, writing articles that inflamed nationalist sentiment across the subcontinent.
+    </p>
+
+    <blockquote>
+      "Swaraj is my birthright and I shall have it!"
+      <br>— Lokmanya Bal Gangadhar Tilak
+    </blockquote>
+
+    <h2>Cultural Mobilization</h2>
+    <p>
+      One of Tilak's greatest strategic achievements was his use of cultural events to mobilize the masses. He revived the <strong>Ganeshotsav</strong> (Ganesh festival) in 1893 as a community gathering that transcended caste barriers, and the <strong>Shiv Jayanti</strong> celebration honoring Chhatrapati Shivaji — both designed to build a sense of collective Hindu-Maratha identity and political solidarity under the guise of religious observance.
+    </p>
+
+    <div class="highlight-box">
+      <h4>Key Contributions</h4>
+      <ul>
+        <li>Revived Ganeshotsav as a mass political gathering (1893)</li>
+        <li>Founded Kesari and Mahratta newspapers for nationalist journalism</li>
+        <li>Co-founded the Deccan Education Society and New English School</li>
+        <li>Launched the All India Home Rule League (1916)</li>
+        <li>Advocated the Swadeshi movement and boycott of British goods</li>
+      </ul>
+    </div>
+
+    <h2>Swadeshi Movement</h2>
+    <p>
+      Tilak was a passionate advocate of <strong>Swadeshi</strong> — the principle of economic self-reliance. Following the partition of Bengal in 1905, he became one of the most vocal leaders demanding the boycott of British-manufactured goods and the promotion of Indian-made products. He believed that economic independence was inseparable from political freedom.
+    </p>
+
+    <h2>Home Rule Movement</h2>
+    <p>
+      In <strong>1916</strong>, Tilak founded the <strong>All India Home Rule League</strong> alongside Annie Besant, demanding self-governance for India within the British Empire. His powerful oratory, his mastery of public sentiment, and his unflinching courage helped galvanize support across India, laying the groundwork for the mass movements that would follow under Mahatma Gandhi.
+    </p>
+
+    <h2>Imprisonment and Legacy</h2>
+    <p>
+      Tilak was imprisoned multiple times for sedition. Most notably, he spent <strong>six years in Mandalay Jail</strong> in Burma (1908–1914) after being convicted for writing articles deemed inciting. In prison, he wrote one of his most significant philosophical works, <strong>"Gita Rahasya"</strong> — a commentary on the Bhagavad Gita that argued for an active, engaged life over passive renunciation.
+    </p>
+    <p>
+      Tilak passed away on <strong>August 1, 1920</strong>. Mahatma Gandhi called him "the Maker of Modern India." His rallying cry — <em>"Swaraj is my birthright and I shall have it"</em> — echoes through history as one of the most defiant and inspirational declarations of the freedom movement.
+    </p>
+    <p>
+      On his birth anniversary, we pay tribute to this great patriot — a man who weaponized culture, journalism, and the law in equal measure to dismantle an empire.
+    </p>
+
+  </article>
+
+  <footer class="article-footer">
+    <p>Written by <strong>Ayush Sabhasad</strong> · IIIT Hyderabad</p>
+    <a href="index.html" class="back-home">
+      <i class='bx bx-arrow-back'></i> Back to Portfolio
+    </a>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      document.getElementById('progress-bar').style.width = ((scrollTop / docHeight) * 100) + '%';
+    });
+  </script>
+</body>
+</html>

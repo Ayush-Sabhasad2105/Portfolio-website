@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An in-depth look at the life, ideology, and legacy of Veer Savarkar — revolutionary freedom fighter, poet, and thinker.">
+  <title>Veer Savarkar: A Revolutionary Freedom Fighter — Ayush Sabhasad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --surface: #16161f;
+      --surface2: #1e1e2e;
+      --border: rgba(255,255,255,0.07);
+      --text: #e2e2f0;
+      --text-muted: #7b7b9a;
+      --accent: #7c3aed;
+      --accent2: #06b6d4;
+      --gradient: linear-gradient(135deg, #7c3aed, #06b6d4);
+      --radius: 16px;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* Progress bar */
+    #progress-bar {
+      position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+      background: var(--gradient); z-index: 1000;
+      transition: width 0.1s linear;
+    }
+
+    /* Back nav */
+    .top-nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 6%; height: 60px;
+      background: rgba(10,10,15,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      z-index: 999;
+    }
+    .back-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--text-muted); text-decoration: none; font-size: 14px;
+      font-weight: 500; transition: color 0.2s;
+    }
+    .back-btn:hover { color: var(--accent2); }
+    .nav-logo {
+      font-size: 18px; font-weight: 800; text-decoration: none;
+      background: var(--gradient); -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .blog-meta-nav { font-size: 12px; color: var(--text-muted); }
+
+    /* Hero */
+    .hero {
+      position: relative; margin-top: 60px;
+      height: 380px; overflow: hidden;
+      display: flex; align-items: flex-end;
+      background: radial-gradient(ellipse at 60% 40%, rgba(124,58,237,0.25) 0%, transparent 60%),
+                  radial-gradient(ellipse at 20% 70%, rgba(6,182,212,0.15) 0%, transparent 50%),
+                  var(--bg);
+    }
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image: linear-gradient(var(--border) 1px, transparent 1px),
+                        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 60px 60px;
+      -webkit-mask-image: linear-gradient(to bottom, transparent, rgba(0,0,0,0.3) 30%, rgba(0,0,0,0.3) 70%, transparent);
+      mask-image: linear-gradient(to bottom, transparent, rgba(0,0,0,0.3) 30%, rgba(0,0,0,0.3) 70%, transparent);
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, var(--bg) 15%, transparent 60%);
+    }
+    .hero-content {
+      position: relative; z-index: 1;
+      max-width: 860px; margin: 0 auto; width: 100%;
+      padding: 0 5% 48px;
+    }
+    .blog-label {
+      display: inline-block; font-size: 11px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--accent2); margin-bottom: 16px;
+      background: rgba(6,182,212,0.1); border: 1px solid rgba(6,182,212,0.2);
+      padding: 4px 12px; border-radius: 6px;
+    }
+    .hero-title {
+      font-family: 'Lora', serif;
+      font-size: clamp(28px, 5vw, 48px); font-weight: 600;
+      line-height: 1.2; margin-bottom: 16px;
+      color: #fff;
+    }
+    .hero-byline {
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+      font-size: 13px; color: var(--text-muted);
+    }
+    .hero-byline span { display: flex; align-items: center; gap: 5px; }
+
+    /* Article body */
+    .article-wrapper {
+      max-width: 720px; margin: 0 auto; padding: 56px 5% 80px;
+    }
+
+    .article-wrapper h2 {
+      font-family: 'Lora', serif;
+      font-size: 26px; font-weight: 600;
+      margin: 48px 0 16px;
+      color: var(--text);
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-wrapper p {
+      font-size: 16px; color: var(--text-muted);
+      line-height: 1.85; margin-bottom: 20px;
+    }
+    .article-wrapper strong { color: var(--text); font-weight: 600; }
+
+    blockquote {
+      margin: 32px 0; padding: 20px 24px;
+      border-left: 3px solid var(--accent);
+      background: var(--surface);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-family: 'Lora', serif; font-style: italic;
+      color: var(--text); font-size: 18px; line-height: 1.65;
+    }
+
+    .key-facts {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px; margin: 32px 0;
+    }
+    .fact-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 20px; text-align: center;
+    }
+    .fact-card .fact-num {
+      font-size: 32px; font-weight: 800;
+      background: var(--gradient); -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; background-clip: text;
+      display: block; margin-bottom: 4px;
+    }
+    .fact-card .fact-label { font-size: 13px; color: var(--text-muted); }
+
+    /* Footer */
+    .article-footer {
+      max-width: 720px; margin: 0 auto; padding: 0 5% 60px;
+      border-top: 1px solid var(--border); padding-top: 40px;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+    }
+    .article-footer p { font-size: 13px; color: var(--text-muted); }
+    .back-home {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 20px; border-radius: 10px;
+      background: var(--surface); border: 1px solid var(--border);
+      color: var(--text); font-size: 14px; font-weight: 500;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .back-home:hover { border-color: var(--accent2); color: var(--accent2); }
+  </style>
+</head>
+<body>
+  <div id="progress-bar"></div>
+
+  <nav class="top-nav">
+    <a href="index.html" class="back-btn">
+      <i class='bx bx-arrow-back'></i> Back to Portfolio
+    </a>
+    <a href="index.html" class="nav-logo">AS</a>
+    <span class="blog-meta-nav">History · 5 min read</span>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="blog-label">History</span>
+      <h1 class="hero-title">Veer Savarkar: A Revolutionary Freedom Fighter</h1>
+      <div class="hero-byline">
+        <span><i class='bx bx-user'></i> Ayush Sabhasad</span>
+        <span><i class='bx bx-calendar'></i> 2024</span>
+        <span><i class='bx bx-time-five'></i> 5 min read</span>
+      </div>
+    </div>
+  </div>
+
+  <article class="article-wrapper">
+
+    <p>
+      <strong>Vinayak Damodar Savarkar</strong>, popularly known as Veer Savarkar, was one of the most remarkable and controversial figures of the Indian independence movement. Born on <strong>May 28, 1883</strong>, in the village of Bhagur in Maharashtra, Savarkar left an indelible mark on India's struggle for freedom through his fearless activism, prolific writing, and indomitable spirit.
+    </p>
+
+    <div class="key-facts">
+      <div class="fact-card">
+        <span class="fact-num">50</span>
+        <span class="fact-label">Years sentenced to imprisonment</span>
+      </div>
+      <div class="fact-card">
+        <span class="fact-num">1857</span>
+        <span class="fact-label">Subject of his landmark work</span>
+      </div>
+      <div class="fact-card">
+        <span class="fact-num">1883</span>
+        <span class="fact-label">Born in Bhagur, Maharashtra</span>
+      </div>
+    </div>
+
+    <h2>Contributions and Ideologies</h2>
+    <p>
+      Savarkar was a multifaceted personality — a poet, writer, lawyer, and social reformer in addition to being a freedom fighter. His most famous work, <strong>"The First War of Indian Independence"</strong>, reframed the revolt of 1857 not as a mere mutiny but as a coordinated uprising against colonial rule, and was subsequently banned by the British government.
+    </p>
+    <p>
+      He coined the term <strong>"Hindutva"</strong> to describe what he saw as the cultural and civilizational identity of the Indian nation. For Savarkar, Hindutva was not merely a religious concept but a socio-political philosophy that encompassed the shared geography, ancestry, and culture of those who called India their homeland.
+    </p>
+
+    <blockquote>
+      "If we had practiced the art of war, we would not today be slaves of the British."
+      <br>— Veer Savarkar
+    </blockquote>
+
+    <h2>Imprisonment and Sacrifices</h2>
+    <p>
+      Savarkar faced extraordinary hardships in his quest for India's independence. In <strong>1909</strong>, he was arrested for his alleged involvement in the Nasik Conspiracy Case and was sentenced to two consecutive life terms — totaling fifty years of transportation. He was transported to the notorious <strong>Cellular Jail</strong> (Kala Pani) in the Andaman and Nicobar Islands, a place synonymous with the most brutal treatment of Indian political prisoners.
+    </p>
+    <p>
+      Despite enduring solitary confinement, forced labor, and severe physical hardship, Savarkar never abandoned his patriotism. He composed verses on the prison walls with thorns and nails when he had no writing materials, preserving his thoughts until he could commit them to paper.
+    </p>
+
+    <h2>Legacy</h2>
+    <p>
+      Veer Savarkar's contributions to India's freedom struggle are immeasurable. His courage, his writings, and his vision of a strong, unified India continue to inspire millions. He was among the earliest advocates for the modernization of Indian society — pushing for caste reforms, widow remarriage, and the abolition of untouchability long before these became mainstream causes.
+    </p>
+    <p>
+      Though his legacy remains a subject of vigorous debate in contemporary India, what cannot be disputed is the extent of his personal sacrifice — years spent in one of the world's most brutal prison systems, enduring conditions designed to break men, without ever surrendering his ideals.
+    </p>
+    <p>
+      On his death anniversary, we remember and honor Veer Savarkar's indomitable spirit — a man who stared down empire, and refused to look away.
+    </p>
+
+  </article>
+
+  <footer class="article-footer">
+    <p>Written by <strong>Ayush Sabhasad</strong> · IIIT Hyderabad</p>
+    <a href="index.html" class="back-home">
+      <i class='bx bx-arrow-back'></i> Back to Portfolio
+    </a>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      document.getElementById('progress-bar').style.width = ((scrollTop / docHeight) * 100) + '%';
+    });
+  </script>
+</body>
+</html>
